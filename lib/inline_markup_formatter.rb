@@ -5,7 +5,7 @@ class InlineMarkupFormatter
   class << self
     def markup(button_names, data, callback_name)
       buttons = to_buttons(button_names, data, callback_name)
-      add_cancel_button(buttons, callback_name)
+      add_cancel_button(buttons)
 
       to_keyboard(buttons)
     end
