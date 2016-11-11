@@ -12,7 +12,7 @@ module Bot
       def subject_name
         name = SubjectNameParser.parse(text)
         fail BotError, "semester_dates_not_found" unless user.semester.present?
-        fail(BotError, "subject_name_not_uniq") if user.subject_exist?(name)
+        fail(BotError, "subject_name_not_uniq")   if     user.subject_exist?(name)
 
         next_command.update(data: name)
         send_message(command_response("number_works_question"))

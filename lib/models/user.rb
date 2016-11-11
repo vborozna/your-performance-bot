@@ -8,11 +8,10 @@ module Bot
     attribute :first_name
     attribute :last_name
 
-    attribute :all_submited, Type::Boolean
+    attribute :success, Type::Boolean
 
     reference :semester,     "Bot::Semester"
     reference :next_command, "Bot::NextCommand"
-    reference :callback,     "Bot::CallbackContainer"
     reference :notification, "Bot::Notification"
     set       :subjects,     "Bot::Subject"
 
@@ -25,6 +24,10 @@ module Bot
 
     def subject_exist?(name)
       subjects.find(name: name).size.positive?
+    end
+
+    def all_submited?
+      success
     end
 
     def self.find_or_create_by(id, from)

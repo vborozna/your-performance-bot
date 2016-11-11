@@ -105,7 +105,7 @@ ru:
 
     all_works_was_submited:   "Все работы были сданы."
 
-    callback_invalid_message: "Невалидное сообщение"
+    callback_invalid_message: "Получено невалидное сообщение."
 
     semester_dates_not_found: "Я не знаю даты начала и конца семестра. /semester"
     date_format_invalid:      "Введеная дата не соответствует формату. /semester"

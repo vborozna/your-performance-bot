@@ -6,6 +6,7 @@ module Bot
       end
 
       def start
+        unset_callback
         edit_message(callback_response("confirmation"))
       end
     end

@@ -2,6 +2,7 @@ module Bot
   module Callback
     class Base # :nodoc:
       include Bot::TranslationHelpers
+      DATA_DELIMITER = ";".freeze
 
       attr_reader :user,
                   :api,
@@ -9,7 +10,7 @@ module Bot
                   :message
 
       def initialize(api, user, query)
-        @data    = query.data.split(";")
+        @data    = query.data.split(DATA_DELIMITER)
         @message = query.message
         @user    = user
         @api     = api
@@ -24,11 +25,6 @@ module Bot
       end
 
       protected
-
-      def verify_callback
-        check = user.callback.message_id == message.message_id
-        fail(BotError, "callback_invalid_message") unless check
-      end
 
       def edit_message(text, options = {})
         options[:chat_id] = user.telegram_id
