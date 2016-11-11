@@ -12,10 +12,10 @@ class InlineMarkupFormatter
 
     private
 
-    def add_cancel_button(buttons, callback_name)
+    def add_cancel_button(buttons)
       name = [I18n.t("buttons.cancel")]
-      data = ["cancel"]
-      buttons << to_buttons(name, data, callback_name).first
+      callback_name = "cancel"
+      buttons << to_buttons(name, [callback_name], callback_name).first
     end
 
     def to_buttons(button_names, data, callback_name)
