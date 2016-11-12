@@ -31,8 +31,9 @@ module Bot
     private
 
     def process
-      if next_command.method && !command.is_a?(Command::Cancel)
-        command.public_send(next_command.method)
+      method = next_command&.method
+      if method && !command.is_a?(Command::Cancel)
+        command.public_send(method)
       else
         command.start
       end

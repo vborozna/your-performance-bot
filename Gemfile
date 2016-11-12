@@ -10,9 +10,9 @@ gem "telegram-bot-ruby",  "0.6.0.2"
 gem "require_all",        "1.3.3"
 gem "clockwork",          "2.0.0"
 gem "sidekiq",            "4.2.5"
+gem "factory_girl",       "3.0.0"
 
 group :development, :test do
-  gem "guard-rubycritic"
   gem "guard-rubocop",    "1.2.0", require: false
   gem "guard-bundler",    "2.1.0", require: false
   gem "guard-rspec",      "4.7.3", require: false
@@ -21,6 +21,3 @@ group :development, :test do
   gem "vcr",              "3.0.3"
   gem "webmock",          "2.1.0"
 end
-
-gem "factory_girl", "3.0.0"
-gem "rubycritic", require: false

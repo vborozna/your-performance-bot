@@ -38,7 +38,6 @@ module Bot
         last_name:    from.last_name,
         semester:     Bot::Semester.create,
         next_command: Bot::NextCommand.create,
-        callback:     Bot::CallbackContainer.create,
         notification: Bot::Notification.create
       )
     end

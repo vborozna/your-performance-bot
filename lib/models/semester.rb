@@ -1,7 +1,8 @@
 require "ohm/datatypes"
 
 module Bot
-  class Semester < Ohm::Model #:nodoc:
+  # Semester data
+  class Semester < Ohm::Model
     include Ohm::DataTypes
 
     attribute :start,  Type::Date

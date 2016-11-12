@@ -4,8 +4,10 @@ require "date"
 require "json"
 
 module Bot
-  class Base #:nodoc:
-    attr_reader :webhook_path, :api, :env
+  class Base # :nodoc:
+    attr_reader :webhook_path,
+                :api,
+                :env
 
     def initialize
       config = Bot.configuration

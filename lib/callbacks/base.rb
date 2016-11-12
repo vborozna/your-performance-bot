@@ -1,6 +1,7 @@
 module Bot
   module Callback
-    class Base # :nodoc:
+    # Base class for callbacks
+    class Base
       include Bot::TranslationHelpers
       DATA_DELIMITER = ";".freeze
 

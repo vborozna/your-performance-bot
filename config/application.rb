@@ -1,7 +1,3 @@
-Bot.configure do |config|
-  config.webhook_path = "/#{config.bot_token}"
-end
-
 Sidekiq.configure_server do |config|
   config.redis = { url: ENV["REDIS_SIDEKIQ_URL"] }
 end

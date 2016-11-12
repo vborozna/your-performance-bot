@@ -13,7 +13,6 @@ module Bot
         destroy_subjects
         next_command.delete
         user.semester.delete
-        user.callback.delete
         user.delete
       end
 

@@ -1,5 +1,6 @@
 module Bot
-  module TranslationHelpers # :nodoc:
+  # Module contains helper methods for message translation
+  module TranslationHelpers
     def translate(name, options = {})
       I18n.t(name, options)
     end
@@ -29,7 +30,7 @@ module Bot
     end
 
     def class_name
-      self.class.to_s.split("::").last.gsub(%r{(.)([A-Z])}, '\1_\2').downcase
+      self.class.to_s.split("::").last.gsub(/(.)([A-Z])/, '\1_\2').downcase
     end
   end
 end

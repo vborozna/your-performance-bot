@@ -10,7 +10,7 @@ module Bot
       end
 
       def text
-        "#{months_part} #{days_part}"
+        "#{months_part}#{days_part}"
       end
 
       def days_part
@@ -32,7 +32,7 @@ module Bot
           "response_particles.time_left.months",
           number:  number_months,
           month_form: translate("month", count: number_months)
-        )
+        ) << " "
       end
     end
   end

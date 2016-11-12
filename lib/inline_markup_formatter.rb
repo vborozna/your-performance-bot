@@ -1,4 +1,4 @@
-# Class is required to generate required keyboard markup
+# Class contains methods which generate a columnar keyboard markup
 class InlineMarkupFormatter
   SLICE_SIZE = 1
 

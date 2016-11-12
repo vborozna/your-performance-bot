@@ -1,8 +1,9 @@
 module Bot
   module Callback
-    class SubjectName < Base # :nodoc:
+    # Callback takes a subject name from data and sends new markup with numbers of works
+    class SubjectName < Base
       def should_start?
-        data.first =~ %r{subject_name}
+        data.first =~ /subject_name/
       end
 
       def start
@@ -22,7 +23,7 @@ module Bot
 
       def remaining_numbers_markup(name)
         numbers = subject(name).remaining_numbers.map(&:to_s)
-        callback_data = numbers.map { |n| "#{name};#{n}"}
+        callback_data = numbers.map { |n| "#{name};#{n}" }
         InlineMarkupFormatter.markup(numbers, callback_data, next_callback_name)
       end
 

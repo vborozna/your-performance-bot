@@ -1,8 +1,9 @@
 module Bot
   module Callback
-    class WorkNumber < Base # :nodoc:
+    # Callback takes lab work on the subject and save it in the user store
+    class WorkNumber < Base
       def should_start?
-        data.first =~ %r{work_number}
+        data.first =~ /work_number/
       end
 
       def start

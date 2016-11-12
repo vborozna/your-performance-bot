@@ -2,7 +2,8 @@ require "date"
 require "ohm/datatypes"
 
 module Bot
-  class Notification < Ohm::Model #:nodoc:
+  # Model contains information about how often to send notifications
+  class Notification < Ohm::Model
     include Ohm::DataTypes
 
     attribute :status,    Type::Boolean

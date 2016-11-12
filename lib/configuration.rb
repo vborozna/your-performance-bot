@@ -1,22 +1,28 @@
 require "erb"
-require "i18n/backend/pluralization"
 
-module Bot #:nodoc:
-  class Configuration #:nodoc:
+# Bot namespace
+module Bot
+  # Class sets the main settings for the bot
+  class Configuration
     attr_reader   :bot_token
     attr_reader   :api
     attr_reader   :enviroment
-    attr_accessor :webhook_path
+    attr_reader   :webhook_path
 
     def initialize
       setup_environment
       setup_i18n
       setup_bot_token
       setup_api
+      setup_webhook
       setup_database
     end
 
     private
+
+    def setup_webhook
+      @webhook_path = "/#{bot_token}"
+    end
 
     def setup_environment
       @enviroment = ENV["RACK_ENV"] || "development"
@@ -51,9 +57,5 @@ module Bot #:nodoc:
 
   def self.configuration
     @configuration ||= Configuration.new
-  end
-
-  def self.configure
-    yield configuration
   end
 end
