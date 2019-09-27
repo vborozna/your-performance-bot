@@ -87,8 +87,8 @@ GEM
       method_source (~> 0.8.1)
       slop (~> 3.4)
     public_suffix (2.0.4)
-    rack (2.0.1)
-    rack-protection (1.5.3)
+    rack (2.0.7)
+    rack-protection (2.0.7)
       rack
     rainbow (2.1.0)
     rb-fsevent (0.9.8)
